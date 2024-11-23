@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <Style>
+        .login-form {
+    width: 100%;
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  body {
+        font-family: Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        background-color: #333333;
+        
+    }
+
+    main {
+        flex: 1;
+        width: 90%;
+        max-width: 1200px;
+        padding: 30px;
+        background: linear-gradient(90deg, #77216F, #DD4814);
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        margin: 20px auto;
+    }
+
+.login-form h1 {
+    font-size: 2.5em;
+    color: #333333;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #DD4814;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #77216F;
+}
+
+.login-form p {
+    margin-top: 20px;
+    font-size: 0.9em;
+}
+
+.login-form a {
+    text-decoration: none;
+    color: #DD4814;
+}
+footer {
+
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    color: #ffffff;
+}
+#error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+    </Style>
+</head>
+
+
+<body>
+        <main>
+        <section class="login-form">
+            <img class="mb-4" src="https://isi.ul.edu.co/pluginfile.php/1/theme_moove/logo/1728072592/Logos%20versiones%20y%20PNG_HORIZONTAL%20LETRA%20AZUL.png" alt="" width="200" height="92">
+            <h1>Iniciar Sesión</h1>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="username">Usuario</label>
+                    <input type="text" id="username" placeholder="Ingrese su usuario">
+                </div>
+                <div class="form-group">
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" placeholder="Ingrese su contraseña">
+                </div>
+                <button type="submit" id="login-button">Iniciar Sesión</button>
+                <div id="error-message"></div>
+            </form>            
+        </section>
+    </main>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-info">
+                <p>&copy; 2024 ZISVA-Electiva Disciplinar II 24-2. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/axios@0.27.2/dist/axios.min.js"></script>
+  <script>
+    const loginForm = document.getElementById('login-form');
+    const loginButton = document.getElementById('login-button');
+    const errorMessage = document.getElementById('error-message');
+
+    loginButton.addEventListener('click', (e) => {
+      e.preventDefault();
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      if (username === '' || password === '') {
+        errorMessage.textContent = 'Por favor, complete todos los campos';
+        return;
+      }
+
+      loginButton.textContent = 'Iniciando sesión...';
+
+      axios.post('http://127.0.0.1:8000/login', {
+        Username: username,
+        Password: password
+      })
+      .then((response) => {
+        loginButton.textContent = 'Iniciar sesión';
+        if (response.data.success) {
+          window.location.href = 'http://127.0.0.1:5500/cliente/index.html';
+        } else {
+          errorMessage.textContent = 'Credenciales incorrectas';
+        }
+      })
+      .catch((error) => {
+        loginButton.textContent = 'Iniciar sesión';
+        console.error(error);
+        errorMessage.textContent = 'Error al iniciar sesión';
+      });
+    });
+  </script>
+    
+</body>
+</html>
