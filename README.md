@@ -26,14 +26,16 @@ El sistema de gestión de usuarios es una aplicación web que permite la creaci�
 ---
 
 ## Front-End
-- **Proveedor:** Vercel  
+- **Proveedor:** Vercel
+- **Repositorio:** https://github.com/orozco21/electiva2_cliente
 - **URL del Front-End:** [Abrir en navegador](https://electiva2-cliente-2xf59u5ui-orozco21s-projects.vercel.app/login.html)  
 
 ---
 
 ## Back-End
-- **Proveedor:** Render  
-- **URL del Back-End:** [Abrir en navegador](https://electiva2-api.onrender.com/)  
+- **Proveedor:** Render
+- **Repositorio:** https://github.com/orozco21/electiva2_api
+- **URL del Back-End:** [Abrir en navegador](https://electiva2-api.onrender.com/)
 
 ---
 
