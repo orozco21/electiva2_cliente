@@ -211,7 +211,7 @@
 
                 if (userId) {
                     // Actualizar usuario existente
-                    axios.put(`http://127.0.0.1:8000/user/${username}`, {
+                    axios.put(`https://electiva2-api.onrender.com/user/${username}`, {
                         Username: username,
                         Password: password
                     }).then(() => {
@@ -229,7 +229,7 @@
                     });
                 } else {
                     // Crear nuevo usuario
-                    axios.post('http://127.0.0.1:8000/user', {
+                    axios.post('https://electiva2-api.onrender.com/user', {
                         Username: username,
                         Password: password
                     }).then(() => {
@@ -245,7 +245,7 @@
         });
 
         function fetchUsers() {
-            axios.get('http://127.0.0.1:8000/users')
+            axios.get('https://electiva2-api.onrender.com/users')
                 .then((response) => {
                     const usersTableBody = document.querySelector('#users-table tbody');
                     usersTableBody.innerHTML = '';
@@ -279,7 +279,7 @@
 
         function delete_User(username) {
             if (confirm('¿Está seguro de que desea eliminar este usuario?')) {
-                axios.delete(`http://127.0.0.1:8000/user/${username}`)
+                axios.delete(`https://electiva2-api.onrender.com/user/${username}`)
                 .then(response => {
                   console.log(response.data);
                         alert('Usuario eliminado correctamente');
