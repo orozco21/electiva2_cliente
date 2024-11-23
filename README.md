@@ -9,7 +9,6 @@ Tecnologías Utilizadas
 Python 3.11
 FastAPI
 MySQL
-SQLAlchemy
 HTML
 CSS
 JavaScript
@@ -23,15 +22,19 @@ Nombre de la base de datos: bq5khnloapqqfal7sr8u
 Usuario de la base de datos: ug5aqugn1mlfkljc
 Contraseña de la base de datos: fVbvJJnAybtXVb7ekEp
 
+Front-End
+----------------
+Proveedor: Vercel
+[URL del Front-End](http://127.0.0.1:5500/Cliente/login.html)
+
+Back-End
+----------------
+Proveedor: Render
+[URL del Back-End](https://electiva2-api.onrender.com/)]
+
 Integrantes del Grupo
 -------------------------
 Daniela Heredia: Desarrolladora Front-end.
 Enrique Orozco: Desarrollador Back-End.
 Sergio Ardila: Desarrollador backend, diseñador de la base de datos.
 
-Enlace al Despliegue de la API
---------------------------------------
-API
-[Enlace al Despliegue del bakend](https://electiva2-api.onrender.com)
------------------------------------------
-Frontend
