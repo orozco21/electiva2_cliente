@@ -45,7 +45,7 @@ Debido a que el back-end está alojado en Render, este puede entrar en estado de
    - Espere hasta que reciba una respuesta del servidor (puede tomar unos minutos si estaba en reposo).  
 
 2. **Acceder al front-end:**  
-   - Abra la URL del front-end en su navegador: [http://127.0.0.1:5500/Cliente/login.html](http://127.0.0.1:5500/Cliente/login.html)  
+   - Abra la URL del front-end en su navegador: [https://electiva2-cliente-2xf59u5ui-orozco21s-projects.vercel.app/login.html](https://electiva2-cliente-2xf59u5ui-orozco21s-projects.vercel.app/login.html)  
 
 3. **Iniciar sesión:**  
    - Utilice las siguientes credenciales:  
