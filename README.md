@@ -6,12 +6,12 @@ El sistema de gestión de usuarios es una aplicación web que permite la creaci�
 
 Tecnologías Utilizadas
 ---------------------------
-Python 3.11
-FastAPI
-MySQL
-HTML
-CSS
-JavaScript
+-Python 3.11
+-FastAPI
+-MySQL
+-HTML
+-CSS
+-JavaScript
 
 Base de Datos
 ----------------
