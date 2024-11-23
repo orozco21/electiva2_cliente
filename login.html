@@ -144,14 +144,14 @@ footer {
 
       loginButton.textContent = 'Iniciando sesión...';
 
-      axios.post('http://127.0.0.1:8000/login', {
+      axios.post('https://electiva2-api.onrender.com/login', {
         Username: username,
         Password: password
       })
       .then((response) => {
         loginButton.textContent = 'Iniciar sesión';
         if (response.data.success) {
-          window.location.href = 'http://127.0.0.1:5500/cliente/index.html';
+          window.location.href = 'index.html';
         } else {
           errorMessage.textContent = 'Credenciales incorrectas';
         }
